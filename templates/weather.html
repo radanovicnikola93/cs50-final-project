@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Google Fonts CDN CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+    <!--CSS-->
+   <link rel="stylesheet" href="../css/wheater.css">
+
+   <!--Fontawesome CDN CSS-->
+   <script src="https://kit.fontawesome.com/f6cf27d267.js"></script>
+   <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+
+    <!-- EasyAutocomplete CSS file -->
+    <link rel="stylesheet" href="../css/easy-autocomplete.min.css"> 
+
+    <!-- EasyAdditional CSS Themes file - not required-->
+    <link rel="stylesheet" href="../css/easy-autocomplete.themes.min.css">
+
+    <!--Favicon-->
+    <link rel="icon" href="../css/img/icons/favicon.ico">
+
+    <title>Nikola's Wheather | Vreme</title>
+
+    <!-- Using jQuery with a CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- EasyAutocomplete JS file -->
+    <script src="../js/jquery.easy-autocomplete.min.js"></script> 
+
+  </head>
+
+  <body>
+
+      <!--Boostrap navbar-->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="../index.html">
+            <img src="../css/img/logo/logo.png" alt="Logo" id="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <!--Home-->
+              <li class="nav-item">
+                  <a class="nav-link text-light" href="../index.html">Home<span class="sr-only"></span></a>
+                </li>
+              <!--Weather-->
+              <li class="nav-item">
+                <a class="nav-link text-light" href="weather.html">Weather report<span class="sr-only">(current)</span></a>
+              </li>
+              <!--Forecast-->
+              <li class="nav-item">
+                <a class="nav-link text-light" href="forecast.html">Forecast<span class="sr-only"></span></a>
+              </li>
+              <!--Map-->
+              <li class="nav-item">
+                  <a class="nav-link text-light" href="map.html">Map<span class="sr-only"></span></a>
+                </li>
+              <!--Aboute page modal data toogle-->
+              <li class="nav-item">
+                  <a class="nav-link text-light" href="#" data-toggle="modal" data-target="#exampleModalLong">About</a>
+              </li>
+            </ul>
+            <span><a href="/templates/weather.html"><img class="language" src="/css/img/icons/usa.ico" alt="usa flag"></a></span>
+              <span><a href="/slovene/templates/weather.html"><img class="language" src="/css/img/icons/slo.ico" alt="slo flag"></a></span>
+            <!--Form group-->
+            <div class="form-group form-inline my-2 my-lg-0">
+              <!--City search input-->
+              <input id="search" name="search" class="form-control" type="text" autocomplete="off">
+              <!--Submitting form-->
+              <button id="submitSearch" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </div>
+          </div>
+      </nav>
+
+      <!-- Modal for About page link in navbar -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Nikola's Weather APP</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  This is a final project for the Harvard's Introduction to Computer Sciense CS50 course.
+                  <ul>
+                      <li>The logo was made in Adobe Photoshop <i class="fab fa-adobe"></i></li>
+                      <li>Programming language used: Javascript <i class="fab fa-js"></i></li>
+                      <li>CSS library: Bootstrap 4 <i class="fab fa-bootstrap"></i></li>
+                      <li>All images were downloaded on www.unsplash.com. The authors link's are displayed in CSS or HTML comments <i class="far fa-images"></i></li>
+                      <li>API Weather provider: <a href='https://openweathermap.org/' target='blank'>OpenWeather Map <i class="far fa-sun"></i></a></li>
+                      <li>The website is running on Google Cloud Platform <i class="fab fa-google"></i></li>
+                      <li>You can check the source code of the project following this link bellow <i class="far fa-hand-point-down"></i><br>
+                        <a href="https://github.com/radanovicnikola93/cs50-final-project" target="blank">Github <i class="fab fa-github"></i></a>
+                      </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+      </div>
+      
+      <!-- showing error from weather.js-->
+      <div id="error" class="text-center"></div>
+
+      <!--Header-->
+      <header id="titleFade" class="page-header text-center">
+        <div class="center">
+          <span id="typed1"></span>
+        </div>
+        <div class="center">
+            <span id="typed2"></span>
+        </div>
+      </header>
+
+      <!-- Weather information container -->
+      <div class="container text-center" >
+            <div id="showWeather"></div>
+            <!--Carousel-->
+             <div id="carouselContent" class="carousel slide" data-interval="1500" data-ride="true">
+              <div class="carousel-inner" role="listbox" >
+                  <div class="carousel-item active" id="carouselActive">
+                    <h1>3-Hour weather report <i class="far fa-hand-point-right"></i></h1>
+                  </div>         
+                  <div id="showHourly"></div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+            </div>
+      </div>
+
+      
+
+      <!--Footer-->
+    <footer>
+        <div class="text-center">
+            <p style='font-size:15px; padding-top: 10px;'>Weather provided by:</p>
+            <a class='nav-link text-light' href='https://openweathermap.org/' target='blank'>
+                <img src='../css/img/logo/logo-owm.svg' style='width:200px; height:100px; margin-top:-50px;'
+            ></a>
+            <p style="margin-top:-50px;"></p><small>&copy; 2019 Nikola Radanović</small></p>
+        </div>
+      </footer>
+
+      <!-- Dropdown input box from json file -->
+      <!-- Custom Easy Autocomplete plugin-->
+      <script>
+          var options = {
+              url: "../data/cities.json",
+        
+              getValue: "name",
+        
+              list: {
+                  match: {
+                  enabled: true
+              },
+              maxNumberOfElements: 6,
+
+              showAnimation: {
+                type: "fade", //normal|slide|fade
+                time: 400,
+                callback: function() {}
+              },
+
+              hideAnimation: {
+                type: "slide", //normal|slide|fade
+                time: 400,
+                callback: function() {}
+              }
+                },
+
+              template: {
+                  type: "custom",
+                  method: function(value, item) {
+                    return value + ", " + item.subcountry + " - " + item.country;
+                  }
+              }
+          };
+    
+      $("#search").easyAutocomplete(options);
+      </script>
+
+      <!--User can press enter to search on input without click on button-->
+      <script>
+        var input = document.getElementById("search");
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("submitSearch").click();
+          }
+        });
+      </script>
+
+      <!--Typed library from Mattboldt: https://mattboldt.com/demos/typed-js/ -->
+      <script src="../js/typed.js"></script>
+      <script type="text/javascript">
+      
+      $(document).ready(function(){
+
+        setTimeout(function(){
+        var typed = new Typed('#typed1', {
+            strings: ["Wheater report"],
+            typeSpeed: 40,
+            loop: false,
+            onComplete: function() {
+            $(".typed-cursor").hide();
+            }
+        }, 0);
+        });
+
+
+        setTimeout(function(){
+        var typed2 = new Typed('#typed2', {
+            strings: ["Search for your desired city in the input above."],
+            typeSpeed: 30,
+            onComplete: function() {
+            $(".typed-cursor").hide();
+            }
+        });
+        }, 1500);
+        });
+
+ 
+        var typed3 = new Typed('#search', {
+          strings: ['Search for your city'],
+          typeSpeed: 50,
+          backSpeed: 50,
+          cursorChar: '_',
+          loop: true,
+          attr: 'placeholder'
+        });
+      
+
+      </script>
+
+      <!--Javascript external file-->
+      <script src="../js/weather.js"></script>
+
+      <!-- Optional JavaScript -->
+      <!-- Popper.js, then Bootstrap JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+
+</html>

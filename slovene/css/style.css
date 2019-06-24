@@ -1,0 +1,202 @@
+html, body {
+  height: 100%;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Random background plugin */
+/* https://www.jqueryscript.net/other/jQuery-Plugin-For-Random-Background-Image-randomBackground.html */
+.randbg {
+    background: url('../../css/img/background/1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .randbg.bg1 {
+    /* https://unsplash.com/@madhu_shesharam */
+    background-image: url('../../css/img/background/1.jpg');
+  }
+  .randbg.bg4 {
+    /* https://unsplash.com/@wx1993 */
+    background-image: url('../../css/img/background/4.jpg');
+  }
+  .randbg.bg5 {
+    /* https://unsplash.com/@imthebear */
+    background-image: url('../../css/img/background/5.jpg');
+  }
+  .randbg.bg6 {
+    /* https://unsplash.com/@mjliao */
+    background-image: url('../../css/img/background/6.jpg');
+  }
+  .randbg.bg7 {
+    /* https://unsplash.com/@robertlukeman */
+    background-image: url('../../css/img/background/7.jpg');
+  }
+  .randbg.bg8 {
+    /* https://unsplash.com/@samferrara */
+    background-image: url('../../css/img/background/8.jpg');
+  }
+  .randbg.bg9 {
+    /* https://unsplash.com/@samferrara */
+    background-image: url('../../css/img/background/9.jpg');
+  }
+  .randbg.bg10 {
+    /* https://unsplash.com/@boba4life */
+    background-image: url('../../css/img/background/10.jpg');
+  }
+  
+  
+/* Mobile devices random background*/
+@media only screen and (max-width: 767px) {
+  /* Background image  */
+  .randbg {
+      background: url('../../css/img/background/1-mb.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .randbg.bg1 {
+      /* https://unsplash.com/@madhu_shesharam */
+      background-image: url('../../css/img/background/1-mb.jpg');
+    }
+    .randbg.bg2 {
+      /* https://unsplash.com/@silasbaisch */
+      background-image: url('../../css/img/background/2-mb.jpg');
+    }
+    .randbg.bg3 {
+      /* https://unsplash.com/@steve3p_0 */
+      background-image: url('../../css/img/background/3-mb.jpg');
+    }
+    .randbg.bg4 {
+      /* https://unsplash.com/@steve3p_0 */
+      background-image: url('../../css/img/background/4-mb.jpg');
+    }
+    .randbg.bg5 {
+      /* https://unsplash.com/@wx1993 */
+      background-image: url('../../css/img/background/5-mb.jpg');
+    }
+    .randbg.bg6 {
+      /* https://unsplash.com/@charlpost */
+      background-image: url('../../css/img/background/6-mb.jpg');
+    }
+    .randbg.bg7 {
+      /* https://unsplash.com/@kevinbessat  */
+      background-image: url('../../css/img/background/7-mb.jpg');
+    }
+    .randbg.bg8 {
+      /* https://unsplash.com/@ruifao */
+      background-image: url('../../css/img/background/8-mb.jpg');
+    }
+    .randbg.bg9 {
+      /* https://unsplash.com/@jampatcon */
+      background-image: url('../../css/img/background/9-mb.jpg');
+    }
+    .randbg.bg10 {
+      /* https://unsplash.com/@midwestiscool */
+      background-image: url('../../css/img/background/10-mb.jpg');
+    }
+
+}
+
+/*  navigation bar color */
+.navbar-dark {
+  background-color: rgba(0,0,0,0.3);;
+}
+
+/*  navbar links color */
+.navbar-dark .navbar-collapse .navbar-nav .nav-link:hover {
+  color: lightblue !important;
+  text-decoration: underline;
+}
+
+/*  Navbar logo */
+#logo {
+  width: 120px;
+  height: 50px;
+}
+
+/* flag icons */
+.language {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+/* All icons from Favicon */
+.fas {
+  color: white;
+}
+
+/* Clock icon */
+.fa-clock {
+  margin-right: 5px;
+}
+
+/* Displaying time */
+#time {
+  color: white;
+}
+
+/* Jumbotron */
+.jumbotron {
+  background-color: rgba(0,0,0,0.3);
+  padding-top: 20px;
+  color: white;
+  height: 170px;
+}
+
+/* Typed header */
+#typed1 {
+  font-size: 30px;
+}
+
+#typed2 {
+  font-size: 20px;
+}
+
+/* Cursos in header after typed */
+.typed-cursor {
+  font-size: 30px;
+  display: inline;
+  opacity: 1;
+  animation: blink .7s infinite;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Container */
+.container {
+  margin-top: 10px;
+}
+
+/* Boostraps cards */
+.card {
+  background-color: rgba(0,0,0, 0.3);
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.card a {
+  text-decoration: none;
+  color: white;
+}
+
+.card:hover {
+  background-color: rgba(0,0,0, 0.5);
+  padding: 15px 30px 10px 30px;
+}
+
+
+

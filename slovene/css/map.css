@@ -1,0 +1,103 @@
+html, body {
+    height: 100%;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* background image */
+body {
+    background: url('../../css/img/weather/cloudy.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*  navigation bar color */
+.navbar-dark {
+    background-color: rgba(0,0,0,0.3);;
+}
+
+/*  navbar links color */
+.navbar-dark .navbar-collapse .navbar-nav .nav-link:hover {
+    color: lightblue !important;
+    text-decoration: underline;
+}
+
+/* flag icons */
+.language {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+  }
+  
+/*  Navbar logo */
+#logo {
+    width: 120px;
+    height: 50px;
+}
+
+/* Header */
+header {
+    background-color: rgba(0,0,0,0.3);
+    font-size:30px; 
+    color:white;
+    padding-top: 20px;
+    padding-bottom: 64px;
+    height: 170px;
+}
+
+/* Typed header */
+#typed1 {
+    font-size: 30px;
+  }
+  
+  #typed2 {
+    font-size: 20px;
+  }
+  
+/* Cursos in header after typed */
+.typed-cursor {
+    font-size: 30px;
+    display: inline;
+    opacity: 1;
+    animation: blink .7s infinite;
+}
+  
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Map */
+#map {
+    height: 75vh;
+    width: 100%;
+}
+
+/* Capitalizing weather description from popup in map.js */
+p.capitalize {
+    text-transform: capitalize;
+}
+
+.customPopup .leaflet-popup-content-wrapper {
+    background-color: rgba(0,0,0, 0.7);
+    opacity: 1;
+    color: white;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0,0,0, 0.3);
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 120px;
+  }

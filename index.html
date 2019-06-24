@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CDN CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Fontawesome CDN CSS-->
+    <script src="https://kit.fontawesome.com/f6cf27d267.js"></script>
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+
+    <!--Google Fonts CDN CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="icon" href="css/img/icons/favicon.ico">
+
+    <title>Nikola's Wheather | Homepage</title>
+
+    <!-- Using jQuery with a CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+
+
+
+  </head>
+
+  <!--randombg class for random background images-->
+  <body class="randbg" onload="startTime()">
+
+    <!--Boostrap navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">
+          <img src="../css/img/logo/logo.png" alt="Logo" id="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <!--Home-->
+            <li class="nav-item">
+                <a class="nav-link text-light" href="index.html">Home<span class="sr-only">current</span></a>
+              </li>
+            <!--Weather-->
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/templates/weather.html">Weather report<span class="sr-only"></span></a>
+            </li>
+            <!--Forecast-->
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/templates/forecast.html">Forecast<span class="sr-only"></span></a>
+            </li>
+            <!--Map-->
+            <li class="nav-item">
+                <a class="nav-link text-light" href="/templates/map.html">Map<span class="sr-only"></span></a>
+            </li>
+            <!--Aboute page modal data toogle-->
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#" data-toggle="modal" data-target="#exampleModalLong">About</a>
+            </li>
+          </ul>
+          <span><a href="/index.html"><img class="language" src="/css/img/icons/usa.ico" alt="usa flag"></a></span>
+          <span><a href="/slovene/index.html"><img class="language" src="/css/img/icons/slo.ico" alt="slo flag"></a></span>
+          <span class="fas fa-clock"></span>
+          <span id="time"></span>
+            
+        </div>
+    </nav>
+
+    <!-- Modal for About page link in navbar -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Nikola's Weather APP</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              This is a final project for the Harvard's Introduction to Computer Sciense CS50 course.
+              <ul>
+                  <li>The logo was made in Adobe Photoshop <i class="fab fa-adobe"></i></li>
+                  <li>Programming language used: Javascript <i class="fab fa-js"></i></li>
+                  <li>CSS library: Bootstrap 4 <i class="fab fa-bootstrap"></i></li>
+                  <li>All images were downloaded on www.unsplash.com. The author link's are displayed in CSS or HTML comments <i class="far fa-images"></i></li>
+                  <li>API Weather provider: <a href='https://openweathermap.org/' target='blank'>OpenWeather Map <i class="far fa-sun"></i></a></li>
+                  <li>The website is running on Google Cloud Platform <i class="fab fa-google"></i></li>
+                  <li>You can check the source code of the project following this link bellow <i class="far fa-hand-point-down"></i><br>
+                  <a href="https://github.com/radanovicnikola93/cs50-final-project" target="blank">Github <i class="fab fa-github"></i></a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--Jumbotron-->
+    <div class="jumbotron">
+      <div class="text-center justify-content-center">
+          <div class="center">
+            <span id="typed1"></span>
+          </div>
+          <div class="center">
+              <span id="typed2"></span>
+          </div>
+      </div>
+    </div>
+
+      <div class="container">
+        <div class="card-group">
+            <div class="card">
+                <a href="/templates/weather.html">
+                  <i class="fas fa-sun fa-7x"></i>
+                  <div class="card-body">
+                      <h5 class="card-title">Weather Report</h5>
+                      <p>Head to Weather Report tab to display current weather information</p>
+                      <ul style="text-align: left;" class="card-text">
+                        <li>Check current and 3-hour weather report</li>
+                        <li>Weather info</li>
+                        <li>Pressure</li>
+                        <li>Humidity</li>
+                        <li>Min / Max temperature</li>
+                        <li>Wind speed / Wind direction</li>
+                        <li>Cloudiness</li>
+                      </ul>
+                    </div>
+                </a>
+              
+            </div>
+            <div class="card">
+                <a href="/templates/forecast.html">
+                  <i class="fas fa-calendar-alt fa-7x"></i>
+                  <div class="card-body">
+                    <h5 class="card-title">Forecast</h5>
+                    <p class="card-text">Head to Forecast tab to forecast weather for desired days</p>
+                    <ul style="text-align: left;">
+                    <li>Forecast weather for tomorrow and up to 14 days</li>
+                    <li>Weather info</li>
+                    <li>Pressure</li>
+                    <li>Humidity</li>
+                    <li>Min / Max temperature</li>
+                    <li>Wind speed / Wind direction</li>
+                    <li>Cloudiness</li>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="/templates/map.html">
+                  <i class="fas fa-search-location fa-7x"></i>
+                  <div class="card-body">
+                    <h5 class="card-title">Map</h5>
+                    <p class="card-text">Head to Map tab to search on the map for your desired location</p>
+                    <ul style="text-align: left;">
+                    <li>This is the easiest way to search for multiple locations</li>
+                    <li>Just search for your desired location by exploring the map</li>
+                    <li>The weather report will pop up on the map as soon as you click the city</li>
+                    <li>Zoom in the map for more detailed search</li>
+                  </div>
+                </a>
+            </div>
+          </div>
+      </div> 
+
+      <!--Random background library-->
+      <!--https://www.jqueryscript.net/other/jQuery-Plugin-For-Random-Background-Image-randomBackground.html-->
+      <script src="js/rand.bg.js"></script>
+      <script>
+        $(".randbg").RandBG({
+        ClassPrefix: "bg",
+        count: 10
+        });
+      </script>
+
+      <!--Displaying current time-->
+      <!--https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock-->
+      <script>
+        function startTime() {
+          var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('time').innerHTML =
+          h + ":" + m + ":" + s;
+          var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+      </script>
+
+      <!--Typed library from Mattboldt: https://mattboldt.com/demos/typed-js/ -->
+      <script src="/js/typed.js"></script>
+      <script type="text/javascript">
+      
+        $(document).ready(function(){
+
+          setTimeout(function(){
+            var typed = new Typed('#typed1', {
+              strings: ["Welcome to my Weather APP."],
+              typeSpeed: 40,
+              loop: false,
+              onComplete: function() {
+                $(".typed-cursor").hide();
+              }
+            }, 0);
+          });
+            
+
+          setTimeout(function(){
+            var typed = new Typed('#typed2', {
+              strings: ["This is Harvard's CS50 Introduction to Computer Science final project." , "Enjoy :)"],
+              typeSpeed: 30,
+              backSpeed: 10,
+              smartBackspace: true, // this is default
+              onComplete: function() {
+                $(".typed-cursor").hide();
+              }
+            });
+          }, 2000);
+        });
+      
+      </script>
+
+      <!-- Optional JavaScript -->
+      <!-- Popper.js, then Bootstrap JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </body>
+
+  
+</html>
