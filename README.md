@@ -1,5 +1,5 @@
 ﻿## CS50 FINAL PROJECT 2019 - NIKOLA'S WEATHER APP
-You can check the site on this link:[Nikola's Weather APP](http://nikolas-weather.com/)
+You can check the site on this link: [Nikola's Weather APP](www.nikolas-weather.com)
 
 I always wanted to make a Weather app for myself and for my friends. I always had a passion for frontend and JavaScript programming language. 
 
