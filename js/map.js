@@ -16,9 +16,9 @@ var map = L.map('map', {
 //BASEMAPS
 
 // Map layer from OpenStreetMap
-var openStreetMap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+var openStreetMap = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png',
 {
-    attribution: '&copy; <a href="http://osm.org/copyright" target = "_blank">OpenStreetMap</a>' // Copyright on bottom right corner
+    attribution: '&copy; <a href="https://osm.org/copyright" target = "_blank">OpenStreetMap</a>' // Copyright on bottom right corner
 }).addTo(map);
 
 // Popup
@@ -87,7 +87,7 @@ function onMapClick(e) {
                         '<h6 class="card-text"><u>' + (data.name).toUpperCase() + ', ' + data.sys.country + '</u></h6>' +
                         '<p class="small">Lon: ' + data.coord.lon + ', Lat: ' + data.coord.lat + '</p>' +
                         '<h2 style="font-size:50px;" class="card-text">' + Math.round(data.main.temp) + '&deg;C</h2>' +
-                        '<p class="capitalize">' + "<img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>" + data.weather[0].description + '</p>' +
+                        '<p class="capitalize">' + "<img src='https://openweathermap.org/img/w/"+data.weather[0].icon+".png'>" + data.weather[0].description + '</p>' +
                         '<p><strong>Min temp: </strong>' + data.main.temp_min + '&deg;C / <strong>Max temp: </strong>' + data.main.temp_max + '&deg;C</p>' +
                         '<p><strong>Pressure: </strong>' + data.main.pressure + ' hpa</p>' +
                         '<p><strong>Humidity: </strong>' + data.main.humidity + ' %</p>' +
