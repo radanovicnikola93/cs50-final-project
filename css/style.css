@@ -46,7 +46,7 @@ html, body {
   }
   
   
-/* Mobile devices random background*/
+/* Mobile devices random background */
 @media only screen and (max-width: 767px) {
   /* Background image  */
   .randbg {
