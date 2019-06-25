@@ -14,7 +14,7 @@ function getWeather(){
         
         $.ajax({
 
-            url: 'http://api.openweathermap.org/data/2.5/weather?q=' + search + "&units=metric" + "&APPID=e8f4a198e35c9c4649ccbf95c524b37f" + "&lang=sl",
+            url: 'https://api.openweathermap.org/data/2.5/weather?q=' + search + "&units=metric" + "&APPID=e8f4a198e35c9c4649ccbf95c524b37f" + "&lang=sl",
             type: "GET",
             dataType: "jsonp",
             success: function(data){
@@ -60,7 +60,7 @@ function getWeather(){
         });
 
         $.ajax({
-            url: 'http://api.openweathermap.org/data/2.5/forecast?q=' + search + "&units=metric" + "&APPID=c10bb3bd22f90d636baa008b1529ee25" + "&lang=sl",
+            url: 'https://api.openweathermap.org/data/2.5/forecast?q=' + search + "&units=metric" + "&APPID=c10bb3bd22f90d636baa008b1529ee25" + "&lang=sl",
             type: "GET",
             dataType: "jsonp",
 
@@ -119,7 +119,7 @@ function getWeather(){
                         
                                     card += '<h6><u>' + data.list[i].dt_txt + '</u></h6>'
                                     card += '<h2 style="font-size:50px;">' + Math.round(data.list[i].main.temp) + '&deg;C</h2>'
-                                    card += "<img src='http://openweathermap.org/img/w/"+data.list[i].weather[0].icon+".png'>" + '<p class="capitalize">' + data.list[i].weather[0].description + '</p>'
+                                    card += "<img src='https://openweathermap.org/img/w/"+data.list[i].weather[0].icon+".png'>" + '<p class="capitalize">' + data.list[i].weather[0].description + '</p>'
                                     card += '<p>Min temp: ' + Math.round(data.list[i].main.temp_min) + '&deg;C / Max temp: ' + Math.round(data.list[i].main.temp_max) + '&deg;C</p>'
                                     card += '<p><strong>Pritisk: </strong>' + data.list[i].main.pressure + ' hpa</p>'
                                     card += '<p><strong>Vlaga: </strong>' + data.list[i].main.humidity + ' %</p>'
@@ -197,7 +197,7 @@ function showResults(data){
                         '<h2 class="card-text"><u>' + (data.name).toUpperCase() + ', ' + data.sys.country + '</u></h2>' +
                         '<p class="card-text small">Lon: ' + data.coord.lon + ', Lat: ' + data.coord.lat + '</p>' +
                         '<h2 class="card-text" style="font-size:50px;" class="card-text">' + Math.round(data.main.temp) + '&deg;C</h2>' +
-                        '<p class="card-text capitalize">' + "<img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>" + data.weather[0].description + '</p>' +
+                        '<p class="card-text capitalize">' + "<img src='https://openweathermap.org/img/w/"+data.weather[0].icon+".png'>" + data.weather[0].description + '</p>' +
                         '<p class="card-text"><strong>Min temp: </strong>' + data.main.temp_min + '&deg;C / <strong>Max temp: </strong>' + data.main.temp_max + '&deg;C</p>' +
                         '<p class="card-text"><strong>Pritisk: </strong>' + data.main.pressure + ' hpa</p>' +
                         '<p class="card-text"><strong>Vlaga: </strong>' + data.main.humidity + ' %</p>' +

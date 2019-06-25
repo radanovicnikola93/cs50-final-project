@@ -12,7 +12,7 @@ function getForecast(){
     
     if(search != '' && days != ''){
         $.ajax({
-            url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + search + "&units=metric" + "&cnt=" + days + "&APPID=c10bb3bd22f90d636baa008b1529ee25" + "&lang=sl",
+            url: 'https://api.openweathermap.org/data/2.5/forecast/daily?q=' + search + "&units=metric" + "&cnt=" + days + "&APPID=c10bb3bd22f90d636baa008b1529ee25" + "&lang=sl",
             type: "GET",
             dataType: "jsonp",
             success: function(data){
@@ -87,7 +87,7 @@ function getForecast(){
                                 card += '<div class="card-body">';
                                     card += '<h6 class="card-text"><u>' + someFormattedDate + '</u></h6>';
                                     card += '<h2 style="font-size:50px;" class="card-text">' + Math.round(data.list[i].temp.day) + '&deg;C</h2>';
-                                    card += "<img src='http://openweathermap.org/img/w/"+data.list[i].weather[0].icon+".png'>" + '<p class="card-text capitalize">' + data.list[i].weather[0].description + '</p>';
+                                    card += "<img src='https://openweathermap.org/img/w/"+data.list[i].weather[0].icon+".png'>" + '<p class="card-text capitalize">' + data.list[i].weather[0].description + '</p>';
                                     card += '<p class="card-text">Min temp: ' + Math.round(data.list[i].temp.min) + '&deg;C / Max temp: ' + Math.round(data.list[i].temp.max) + '&deg;C</p>';
                                     card += '<p class="card-text"><strong>Pritisk: </strong>' + data.list[i].pressure + ' hpa</p>';
                                     card += '<p class="card-text"><strong>Vlaga: </strong>' + data.list[i].humidity + ' %</p>';
